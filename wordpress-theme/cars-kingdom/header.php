@@ -12,10 +12,10 @@
 		<a class="ck-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">👑 Cars <b>Kingdom</b> LTD</a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'ck-menu', 'fallback_cb' => function () { ?>
 			<ul class="ck-menu">
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Used Cars</a></li>
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_bike' ) ); ?>">Used Bikes</a></li>
+				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Used Cars (Lahore)</a></li>
 				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_new_car' ) ); ?>">New Cars</a></li>
-				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_review' ) ); ?>">Reviews</a></li>
+				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_review' ) ); ?>">Car Reviews</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
 			</ul>
 		<?php } ) ); ?>
 	</div>

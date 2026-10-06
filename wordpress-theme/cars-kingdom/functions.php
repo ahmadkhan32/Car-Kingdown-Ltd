@@ -1,15 +1,15 @@
 <?php
 /**
- * Cars Kingdom LTD theme bootstrap.
+ * Cars Kingdom LTD theme bootstrap (Cars Only).
  *
- * - Registers CPTs: ck_car, ck_bike, ck_new_car, ck_review
+ * - Registers CPTs: ck_car, ck_new_car, ck_review
  * - Registers taxonomies: ck_make, ck_city, ck_body
- * - Exposes REST API /wp-json/carskingdom/v1/{cars,bikes,newCars,reviews,posts,makes,cities}
+ * - Exposes REST API /wp-json/carskingdom/v1/{cars,newCars,reviews,posts,makes,cities}
  * - Elementor compatible (CPTs are editable with Elementor)
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'CK_VERSION', '1.0.0' );
+define( 'CK_VERSION', '1.0.1' );
 require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/rest-api.php';
 
@@ -30,10 +30,10 @@ add_action( 'wp_enqueue_scripts', function () {
 
 // Let Elementor edit our custom post types.
 add_filter( 'elementor_cpt_support', function ( $types ) {
-	return array_unique( array_merge( (array) $types, array( 'page', 'post', 'ck_car', 'ck_bike', 'ck_new_car', 'ck_review' ) ) );
+	return array_unique( array_merge( (array) $types, array( 'page', 'post', 'ck_car', 'ck_new_car', 'ck_review' ) ) );
 } );
 add_action( 'init', function () {
 	$types = get_option( 'elementor_cpt_support', array( 'page', 'post' ) );
-	$types = array_unique( array_merge( (array) $types, array( 'ck_car', 'ck_bike', 'ck_new_car', 'ck_review' ) ) );
+	$types = array_unique( array_merge( (array) $types, array( 'ck_car', 'ck_new_car', 'ck_review' ) ) );
 	update_option( 'elementor_cpt_support', $types );
 } );

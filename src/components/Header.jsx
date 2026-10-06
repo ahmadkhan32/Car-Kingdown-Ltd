@@ -1,7 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 
-const links = [["/", "Home"], ["/cars", "Used Cars"], ["/bikes", "Used Bikes"], ["/new-cars", "New Cars"], ["/reviews", "Reviews"], ["/blog", "Blog"], ["/parts", "Auto Parts"]];
+const links = [
+  ["/", "Home"],
+  ["/cars", "Used Cars (Lahore)"],
+  ["/new-cars", "New Cars"],
+  ["/reviews", "Car Reviews"],
+  ["/blog", "Auto Blog"],
+  ["/parts", "Auto Parts"],
+];
 
 export default function Header() {
   const { count, setOpen } = useCart();

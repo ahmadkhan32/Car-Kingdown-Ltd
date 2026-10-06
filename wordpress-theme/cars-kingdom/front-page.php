@@ -4,9 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 if ( 'page' === get_option( 'show_on_front' ) && have_posts() ) { get_template_part( 'index' ); return; }
 get_header(); ?>
 <section class="ck-hero"><div class="ck-container">
-	<h1>Find your dream ride with Cars Kingdom LTD</h1>
-	<p>Used cars, bikes, new cars, reviews and parts.</p>
-	<a class="ck-btn" href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Browse Used Cars</a>
+	<h1>Find your dream car with Cars Kingdom LTD</h1>
+	<p>Lahore used cars, new cars, car reviews and auto parts.</p>
+	<a class="ck-btn" href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Browse Used Cars in Lahore</a>
 </div></section>
 <main class="ck-container">
 	<h2>Featured Cars</h2>

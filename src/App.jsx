@@ -7,8 +7,6 @@ import Notification from "./components/Notification";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
 import CarDetail from "./pages/CarDetail";
-import Bikes from "./pages/Bikes";
-import BikeDetail from "./pages/BikeDetail";
 import NewCars, { NewCarDetail } from "./pages/NewCars";
 import Reviews from "./pages/Reviews";
 import ReviewDetail from "./pages/ReviewDetail";
@@ -29,8 +27,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cars" element={<Cars />} />
           <Route path="/cars/:id" element={<CarDetail />} />
-          <Route path="/bikes" element={<Bikes />} />
-          <Route path="/bikes/:id" element={<BikeDetail />} />
           <Route path="/new-cars" element={<NewCars />} />
           <Route path="/new-cars/:id" element={<NewCarDetail />} />
           <Route path="/reviews" element={<Reviews />} />

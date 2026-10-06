@@ -33,8 +33,6 @@ export async function getOne(collection, id) {
 
 export const getCars = (p) => list("cars", p);
 export const getCar = (id) => getOne("cars", id);
-export const getBikes = (p) => list("bikes", p);
-export const getBike = (id) => getOne("bikes", id);
 export const getNewCars = (p) => list("newCars", p);
 export const getNewCar = (id) => getOne("newCars", id);
 export const getReviews = (p) => list("reviews", p);

@@ -1,28 +1,76 @@
-# Cars Kingdom LTD
+# Cars Kingdom LTD (PakWheels Lahore Cars Educational Platform)
 
-Automotive marketplace (used cars, bikes, new cars, reviews, blog, auto parts).
+Automotive marketplace web application and research platform modeled after **PakWheels.com**, focused exclusively on **Cars in Lahore** (Bikes and motorcycles are completely excluded).
 
-| Folder | What it is |
+- **GitHub Repository:** [https://github.com/ahmadkhan32/Car-Kingdown-Ltd](https://github.com/ahmadkhan32/Car-Kingdown-Ltd)
+- **Live Vercel Production URL:** [https://car-kingdown-ltd.vercel.app](https://car-kingdown-ltd.vercel.app)
+- **Academic Research Report:** [REPORT.md](./REPORT.md)
+
+---
+
+## Project Structure
+
+| Directory / File | Description |
 |---|---|
-| `src/`, `public/` | React + Vite frontend (deployed on Vercel) |
-| `wordpress-theme/cars-kingdom/` | PHP WordPress theme: CPTs, REST API, Elementor support |
+| `src/`, `public/` | React 19 + Vite 8 frontend deployed on Vercel |
+| `wordpress-theme/cars-kingdom/` | Custom PHP WordPress Theme (`ck_car`, `ck_new_car`, `ck_review`), REST API, Elementor support |
+| `pakwheels-scraper/` | Node.js + Axios + Cheerio educational crawler & parser for Lahore Used Cars |
+| `REPORT.md` | Complete 9-chapter university academic project report |
+| `vercel.json` | Vercel production SPA rewrite rules |
 
-## Frontend
+---
+
+## 1. React Frontend (Cars Only)
+- **Scope:** Used Cars (Lahore), New Cars, Car Reviews, Lahore Blog/Guides, Auto Parts. (Bikes strictly excluded).
+- **Features:**
+  - AJAX live search and multi-criteria filters without full page reloads.
+  - HD responsive photography (sedan, SUV, sports, hatchback, luxury).
+  - Headless integration with WordPress REST API (`/wp-json/carskingdom/v1/*`) and WooCommerce Store API cart.
+  - Bundled high-fidelity offline fallback data in `src/data/sampleData.js`.
+
+### Local Development
 ```bash
 npm install
 npm run dev
 ```
-Set `VITE_WP_API_URL=https://your-wordpress-site.com` to read data from WordPress
-(`/wp-json/carskingdom/v1/*`) and use the WooCommerce Store API cart.
-Without it, the app falls back to bundled demo data in `src/data/sampleData.js`.
 
-## WordPress theme (PHP)
-Vercel cannot run PHP/WordPress. Zip `wordpress-theme/cars-kingdom`, upload it on a PHP host
-(Appearance → Themes), install Elementor (and WooCommerce for parts), and add content under
-Used Cars / Used Bikes / New Cars / Reviews. Elementor can edit pages and all vehicle post types.
+---
 
-REST endpoints: `cars`, `bikes`, `newCars`, `reviews`, `posts`, `makes`, `cities`
-with `q, make, city, year, minPrice, maxPrice, fuel, transmission, page, per_page`.
+## 2. WordPress PHP Theme (`wordpress-theme/cars-kingdom`)
+- **PHP Version:** PHP 8+ compatible.
+- **Custom Post Types:**
+  - `ck_car` (Used Cars)
+  - `ck_new_car` (New Cars)
+  - `ck_review` (Car Reviews)
+- **Taxonomies:** Makes (`ck_make`), Cities (`ck_city`), Body Types (`ck_body`).
+- **Elementor Support:** Registered via `elementor_cpt_support`, allowing Elementor drag-and-drop page editing on all vehicle post types.
+- **REST API:**
+  - `GET /wp-json/carskingdom/v1/cars` (supports `q, make, city, year, minPrice, maxPrice, fuel, transmission, body, page, per_page`)
+  - `GET /wp-json/carskingdom/v1/newCars`
+  - `GET /wp-json/carskingdom/v1/reviews`
+  - `GET /wp-json/carskingdom/v1/makes`
+  - `GET /wp-json/carskingdom/v1/cities`
 
-## Deploy
-Vercel auto-detects Vite. `vercel.json` provides SPA rewrites.
+---
+
+## 3. Educational Web Scraper (`pakwheels-scraper`)
+- **Stack:** Node.js, Axios, Cheerio, robots-parser, csv-writer.
+- **Seed:** `https://www.pakwheels.com/used-cars/lahore/24858`
+- **Output:**
+  - `output/pakwheels.csv`
+  - `output/pakwheels.json`
+  - `output/failed-urls.json`
+  - `output/summary.json`
+
+### Running the Scraper
+```bash
+cd pakwheels-scraper
+npm install
+npm start
+```
+
+---
+
+## 4. Deployment
+- **Frontend:** Auto-deploys to Vercel via GitHub `main` branch: `https://car-kingdown-ltd.vercel.app`
+- **WordPress Backend:** Upload `wordpress-theme/cars-kingdom` to any PHP WordPress hosting provider and point `VITE_WP_API_URL` to the domain.

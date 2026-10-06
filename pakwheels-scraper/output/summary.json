@@ -1,0 +1,21 @@
+{
+  "website": "PakWheels.com",
+  "scope": "Lahore Used Cars (Bikes excluded)",
+  "pages_discovered": 186,
+  "pages_processed": 5,
+  "successful_pages": 5,
+  "failed_pages": 0,
+  "records_found": 3,
+  "successful_records": 3,
+  "duplicates_removed": 0,
+  "missing_fields": {
+    "price": 0,
+    "description": 3,
+    "city": 0,
+    "image": 0,
+    "engine_cc": 3,
+    "mileage_km": 3
+  },
+  "started_at": "2026-10-06T12:13:02.971Z",
+  "finished_at": "2026-10-06T12:13:08.971Z"
+}

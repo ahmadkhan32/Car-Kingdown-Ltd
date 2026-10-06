@@ -88,7 +88,7 @@ add_action( 'rest_api_init', function () {
 		return $v;
 	} );
 
-	$map = array( 'cars' => 'ck_car', 'bikes' => 'ck_bike', 'newCars' => 'ck_new_car', 'reviews' => 'ck_review', 'posts' => 'post' );
+	$map = array( 'cars' => 'ck_car', 'newCars' => 'ck_new_car', 'reviews' => 'ck_review', 'posts' => 'post' );
 	foreach ( $map as $route => $pt ) {
 		register_rest_route( 'carskingdom/v1', "/$route", array(
 			'methods' => 'GET', 'permission_callback' => '__return_true',
