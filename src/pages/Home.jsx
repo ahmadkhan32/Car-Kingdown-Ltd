@@ -19,6 +19,10 @@ export default function Home() {
         <div className="container">
           <h1>Find your dream car with <span>Cars Kingdom LTD</span></h1>
           <p>Premier Lahore used cars marketplace, new car releases, verified reviews & parts.</p>
+          <div style={{ display: "flex", gap: "12px", marginTop: "16px", flexWrap: "wrap" }}>
+            <Link to="/cars" className="btn">Browse Used Cars in Lahore →</Link>
+            <Link to="/sell" className="btn btn-outline" style={{ borderColor: "var(--gold)", color: "var(--gold)" }}>+ Sell Your Car (Free Ad)</Link>
+          </div>
           <SearchBar />
         </div>
       </section>
@@ -29,6 +33,20 @@ export default function Home() {
           <Link to="/cars" className="muted">View All Used Cars →</Link>
         </div>
         <div className="grid">{c.map((v) => <VehicleCard key={v.id} v={v} base="cars" />)}</div>
+      </section>
+      <section className="container section">
+        <div style={{ background: "linear-gradient(135deg, var(--panel), var(--panel2))", border: "1px solid var(--line)", borderRadius: "18px", padding: "36px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "20px" }}>
+          <div>
+            <span className="tag" style={{ borderColor: "var(--gold)", color: "var(--gold)" }}>Free Car Listing</span>
+            <h2 style={{ margin: "8px 0" }}>Want to Sell Your Car in Lahore?</h2>
+            <p className="muted" style={{ margin: 0, maxWidth: "600px" }}>
+              List your car in 2 minutes. Reach genuine, verified car buyers across Lahore with zero commission.
+            </p>
+          </div>
+          <Link to="/sell" className="btn" style={{ fontSize: "1.05rem", padding: "12px 24px" }}>
+            + Post Free Car Ad →
+          </Link>
+        </div>
       </section>
       <section className="container section">
         <div className="section-head">

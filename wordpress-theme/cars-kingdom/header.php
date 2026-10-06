@@ -15,6 +15,7 @@
 				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Used Cars (Lahore)</a></li>
 				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_new_car' ) ); ?>">New Cars</a></li>
 				<li><a href="<?php echo esc_url( get_post_type_archive_link( 'ck_review' ) ); ?>">Car Reviews</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/sell/' ) ); ?>">Sell Your Car</a></li>
 				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
 			</ul>
 		<?php } ) ); ?>

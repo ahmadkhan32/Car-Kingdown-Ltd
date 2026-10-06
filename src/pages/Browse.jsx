@@ -11,10 +11,19 @@ export function MakePage() { const { make, model } = useParams(); return <ListPa
 export function Directory() {
   return (
     <section className="container section">
-      <h2>Browse</h2>
-      <div className="chips">{categories.map((c) => <Link key={c} to={`/categories/${c.toLowerCase()}`}>{c}</Link>)}</div>
-      <div className="chips">{makes.map((m) => <Link key={m} to={`/make/${m.toLowerCase()}`}>{m}</Link>)}</div>
-      <div className="chips">{cities.map((c) => <Link key={c} to={`/city/${c.toLowerCase()}`}>📍 {c}</Link>)}</div>
+      <h2>Browse Used Cars by Type, Make & City</h2>
+      <div style={{ marginBottom: "16px" }}>
+        <h4 style={{ color: "var(--muted)", margin: "0 0 8px" }}>Body Type & Category</h4>
+        <div className="chips">{categories.map((c) => <Link key={c} to={`/categories/${c.toLowerCase()}`}>{c}</Link>)}</div>
+      </div>
+      <div style={{ marginBottom: "16px" }}>
+        <h4 style={{ color: "var(--muted)", margin: "0 0 8px" }}>Popular Car Makes</h4>
+        <div className="chips">{makes.map((m) => <Link key={m} to={`/make/${m.toLowerCase()}`}>{m}</Link>)}</div>
+      </div>
+      <div>
+        <h4 style={{ color: "var(--muted)", margin: "0 0 8px" }}>Cars by City</h4>
+        <div className="chips">{cities.map((c) => <Link key={c} to={`/city/${c.toLowerCase()}`}>📍 {c}</Link>)}</div>
+      </div>
     </section>
   );
 }

@@ -6,6 +6,7 @@ const links = [
   ["/cars", "Used Cars (Lahore)"],
   ["/new-cars", "New Cars"],
   ["/reviews", "Car Reviews"],
+  ["/sell", "Sell Your Car"],
   ["/blog", "Auto Blog"],
   ["/parts", "Auto Parts"],
 ];
@@ -19,7 +20,12 @@ export default function Header() {
         <nav className="nav">
           {links.map(([to, label]) => <NavLink key={to} to={to} end={to === "/"}>{label}</NavLink>)}
         </nav>
-        <button id="cart-btn" className="btn btn-outline" onClick={() => setOpen(true)}>🛒 Cart ({count})</button>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <Link to="/sell" className="btn" id="header-sell-btn" style={{ padding: "8px 14px", fontSize: "0.9rem", whiteSpace: "nowrap" }}>
+            + Post Ad
+          </Link>
+          <button id="cart-btn" className="btn btn-outline" onClick={() => setOpen(true)}>🛒 Cart ({count})</button>
+        </div>
       </div>
     </header>
   );

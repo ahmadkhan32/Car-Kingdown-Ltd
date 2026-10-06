@@ -6,7 +6,10 @@ get_header(); ?>
 <section class="ck-hero"><div class="ck-container">
 	<h1>Find your dream car with Cars Kingdom LTD</h1>
 	<p>Lahore used cars, new cars, car reviews and auto parts.</p>
-	<a class="ck-btn" href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Browse Used Cars in Lahore</a>
+	<div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+		<a class="ck-btn" href="<?php echo esc_url( get_post_type_archive_link( 'ck_car' ) ); ?>">Browse Used Cars in Lahore</a>
+		<a class="ck-btn" style="background:#25304a;color:#f5b942;border:1px solid #f5b942;" href="/sell">+ Sell Your Car (Free)</a>
+	</div>
 </div></section>
 <main class="ck-container">
 	<h2>Featured Cars</h2>

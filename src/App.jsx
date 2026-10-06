@@ -16,6 +16,7 @@ import Parts from "./pages/Parts";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import Sell from "./pages/Sell";
 import { CategoryPage, CityPage, MakePage } from "./pages/Browse";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/parts/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/sell" element={<Sell />} />
           <Route path="/categories/:slug" element={<CategoryPage />} />
           <Route path="/city/:slug" element={<CityPage />} />
           <Route path="/make/:make" element={<MakePage />} />

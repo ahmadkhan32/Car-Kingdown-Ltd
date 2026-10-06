@@ -23,6 +23,8 @@ Automotive marketplace web application and research platform modeled after **Pak
 ## 1. React Frontend (Cars Only)
 - **Scope:** Used Cars (Lahore), New Cars, Car Reviews, Lahore Blog/Guides, Auto Parts. (Bikes strictly excluded).
 - **Features:**
+  - **User Car Listings (`/sell`):** Users can list and publish used cars for sale in Lahore, manage listings, and display verified car cards.
+  - **All Used Car Body Types:** Sedan, Hatchback, SUV, Crossover, Compact SUV, Coupe, Convertible, MPV, Mini Van, Pickup, Double Cabin, Van, Station Wagon, Luxury.
   - AJAX live search and multi-criteria filters without full page reloads.
   - HD responsive photography (sedan, SUV, sports, hatchback, luxury).
   - Headless integration with WordPress REST API (`/wp-json/carskingdom/v1/*`) and WooCommerce Store API cart.
@@ -46,10 +48,12 @@ npm run dev
 - **Elementor Support:** Registered via `elementor_cpt_support`, allowing Elementor drag-and-drop page editing on all vehicle post types.
 - **REST API:**
   - `GET /wp-json/carskingdom/v1/cars` (supports `q, make, city, year, minPrice, maxPrice, fuel, transmission, body, page, per_page`)
+  - `POST /wp-json/carskingdom/v1/cars` (allows submitting user car listings)
   - `GET /wp-json/carskingdom/v1/newCars`
   - `GET /wp-json/carskingdom/v1/reviews`
   - `GET /wp-json/carskingdom/v1/makes`
   - `GET /wp-json/carskingdom/v1/cities`
+  - `GET /wp-json/carskingdom/v1/bodies`
 
 ---
 

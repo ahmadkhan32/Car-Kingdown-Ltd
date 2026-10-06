@@ -39,8 +39,9 @@ pakwheels.com
 └── Used Cars
     └── Lahore (/used-cars/lahore/)
         ├── Pagination (Page 1, 2, 3...)
-        ├── Category / Body Type Filters (Sedan, Hatchback, SUV, Luxury)
-        ├── Make & Model Discovery (Toyota, Honda, Suzuki, Mercedes)
+        ├── Body Type Filters (Sedan, Hatchback, SUV, Crossover, Compact SUV, Coupe, Convertible, MPV, Mini Van, Pickup, Double Cabin, Van, Station Wagon, Luxury)
+        ├── Make & Model Discovery (Toyota, Honda, Suzuki, Mercedes, MG, Changan, Audi, Isuzu, Mazda)
+        ├── User Ad Posting Workflow (/sell — Private Seller Listings)
         └── Individual Car Detail Pages (/used-cars/<slug>-<listing_id>)
 ```
 

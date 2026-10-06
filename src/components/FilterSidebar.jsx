@@ -1,4 +1,4 @@
-import { makes, cities } from "../services/vehicleApi";
+import { makes, cities, bodyTypes } from "../services/vehicleApi";
 
 export default function FilterSidebar({ filters, update, clear }) {
   const on = (k) => (e) => update({ [k]: e.target.value });
@@ -6,8 +6,9 @@ export default function FilterSidebar({ filters, update, clear }) {
     <aside className="filters">
       <h3>Filters</h3>
       <label>Keyword<input id="f-q" value={filters.q || ""} onChange={on("q")} /></label>
-      <label>Make<select id="f-make" value={filters.make || ""} onChange={on("make")}><option value="">All</option>{makes.map((m) => <option key={m}>{m}</option>)}</select></label>
-      <label>City<select id="f-city" value={filters.city || ""} onChange={on("city")}><option value="">All</option>{cities.map((c) => <option key={c}>{c}</option>)}</select></label>
+      <label>Make<select id="f-make" value={filters.make || ""} onChange={on("make")}><option value="">All Makes</option>{makes.map((m) => <option key={m}>{m}</option>)}</select></label>
+      <label>Body Type<select id="f-body" value={filters.body || ""} onChange={on("body")}><option value="">All Body Types</option>{bodyTypes.map((b) => <option key={b} value={b}>{b}</option>)}</select></label>
+      <label>City<select id="f-city" value={filters.city || ""} onChange={on("city")}><option value="">All Cities</option>{cities.map((c) => <option key={c}>{c}</option>)}</select></label>
       <label>Year<input id="f-year" type="number" value={filters.year || ""} onChange={on("year")} /></label>
       <div className="row2">
         <label>Min Price<input id="f-min" type="number" value={filters.minPrice || ""} onChange={on("minPrice")} /></label>

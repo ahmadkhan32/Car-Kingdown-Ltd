@@ -110,4 +110,43 @@ add_action( 'rest_api_init', function () {
 		'callback' => fn() => wp_list_pluck( get_terms( array( 'taxonomy' => 'ck_make', 'hide_empty' => false ) ), 'name' ) ) );
 	register_rest_route( 'carskingdom/v1', '/cities', array( 'methods' => 'GET', 'permission_callback' => '__return_true',
 		'callback' => fn() => wp_list_pluck( get_terms( array( 'taxonomy' => 'ck_city', 'hide_empty' => false ) ), 'name' ) ) );
+	register_rest_route( 'carskingdom/v1', '/bodies', array( 'methods' => 'GET', 'permission_callback' => '__return_true',
+		'callback' => fn() => wp_list_pluck( get_terms( array( 'taxonomy' => 'ck_body', 'hide_empty' => false ) ), 'name' ) ) );
+
+	// Allow users to list used cars via REST API
+	register_rest_route( 'carskingdom/v1', '/cars', array(
+		'methods' => 'POST',
+		'permission_callback' => '__return_true',
+		'callback' => function ( WP_REST_Request $r ) {
+			$title = sanitize_text_field( $r->get_param( 'title' ) );
+			if ( ! $title ) {
+				return new WP_Error( 'missing_title', 'Title is required', array( 'status' => 400 ) );
+			}
+			$pid = wp_insert_post( array(
+				'post_title'   => $title,
+				'post_type'    => 'ck_car',
+				'post_status'  => 'publish',
+				'post_content' => sanitize_textarea_field( $r->get_param( 'description' ) ?: '' ),
+			) );
+			if ( is_wp_error( $pid ) ) {
+				return $pid;
+			}
+			$fields = array( 'price', 'year', 'mileage_km', 'engine_cc', 'fuel_type', 'transmission', 'color', 'assembly', 'model', 'version', 'features' );
+			foreach ( $fields as $f ) {
+				if ( $r->has_param( $f ) ) {
+					update_post_meta( $pid, $f, sanitize_text_field( (string) $r->get_param( $f ) ) );
+				}
+			}
+			if ( $r->get_param( 'make' ) ) {
+				wp_set_object_terms( $pid, sanitize_text_field( $r->get_param( 'make' ) ), 'ck_make' );
+			}
+			if ( $r->get_param( 'city' ) ) {
+				wp_set_object_terms( $pid, sanitize_text_field( $r->get_param( 'city' ) ), 'ck_city' );
+			}
+			if ( $r->get_param( 'body_type' ) ) {
+				wp_set_object_terms( $pid, sanitize_text_field( $r->get_param( 'body_type' ) ), 'ck_body' );
+			}
+			return ck_format( get_post( $pid ) );
+		},
+	) );
 } );

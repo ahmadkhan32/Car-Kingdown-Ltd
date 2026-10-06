@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { usePagination } from "../hooks/usePagination";
 import { useVehicles } from "../hooks/useVehicles";
 import FilterSidebar from "./FilterSidebar";
@@ -10,8 +11,17 @@ export default function ListPage({ title, fetcher, base, fixed = {}, sidebar = t
   const { items, total, totalPages, loading, error } = useVehicles(fetcher, { ...filters, ...fixed, page });
   return (
     <main className="container page">
-      <h1>{title}</h1>
-      <p className="muted">{loading ? "Loading…" : `${total} result${total === 1 ? "" : "s"}`}</p>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px", marginBottom: "8px" }}>
+        <div>
+          <h1 style={{ margin: "0 0 4px" }}>{title}</h1>
+          <p className="muted" style={{ margin: 0 }}>{loading ? "Loading…" : `${total} verified car${total === 1 ? "" : "s"} listed`}</p>
+        </div>
+        {base === "cars" && (
+          <Link to="/sell" className="btn" style={{ padding: "10px 18px", fontSize: "0.95rem" }}>
+            + Post Your Car Ad
+          </Link>
+        )}
+      </div>
       <div className={sidebar ? "layout" : ""}>
         {sidebar && <FilterSidebar filters={filters} update={update} clear={clear} />}
         <section>

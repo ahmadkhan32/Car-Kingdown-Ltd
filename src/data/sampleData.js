@@ -49,10 +49,19 @@ export const cars = [
   mk(6, "Ferrari", "F8", 2021, 120000000, 8000, "Petrol", "Automatic", "Lahore", "Coupe", IMG.sports, 3900, "Tributo"),
   mk(7, "Suzuki", "Alto", 2023, 2750000, 16000, "Petrol", "Automatic", "Lahore", "Hatchback", IMG.hatchback, 660, "VXL AGS"),
   mk(8, "Toyota", "Yaris", 2022, 4800000, 24000, "Petrol", "Automatic", "Lahore", "Sedan", IMG.sedan, 1500, "ATIV X"),
-  mk(9, "Honda", "BR-V", 2020, 5100000, 48000, "Petrol", "Automatic", "Lahore", "SUV", IMG.suv, 1500, "i-VTEC S"),
+  mk(9, "Honda", "BR-V", 2020, 5100000, 48000, "Petrol", "Automatic", "Lahore", "MPV", IMG.suv, 1500, "i-VTEC S"),
   mk(10, "Toyota", "Prius", 2019, 6200000, 55000, "Hybrid", "Automatic", "Lahore", "Hatchback", IMG.sedan, 1800, "S Touring"),
-  mk(11, "Hyundai", "Tucson", 2022, 7900000, 22000, "Petrol", "Automatic", "Lahore", "SUV", IMG.suv, 2000, "AWD"),
-  mk(12, "Kia", "Sportage", 2021, 6900000, 34000, "Petrol", "Automatic", "Lahore", "SUV", IMG.suv, 2000, "FWD"),
+  mk(11, "Hyundai", "Tucson", 2022, 7900000, 22000, "Petrol", "Automatic", "Lahore", "Crossover", IMG.suv, 2000, "AWD"),
+  mk(12, "Kia", "Sportage", 2021, 6900000, 34000, "Petrol", "Automatic", "Lahore", "Crossover", IMG.suv, 2000, "FWD"),
+  mk(13, "Toyota", "Hilux Revo", 2021, 11500000, 31000, "Diesel", "Automatic", "Lahore", "Pickup", IMG.suv, 2800, "Rocco Double Cabin"),
+  mk(14, "Mazda", "MX-5", 2018, 9200000, 26000, "Petrol", "Manual", "Lahore", "Convertible", IMG.sports, 2000, "Miata RF"),
+  mk(15, "Toyota", "Corolla Fielder", 2019, 4400000, 62000, "Hybrid", "Automatic", "Lahore", "Station Wagon", IMG.sedan, 1500, "Hybrid G"),
+  mk(16, "Suzuki", "Every", 2020, 2350000, 41000, "Petrol", "Automatic", "Lahore", "Van", IMG.hatchback, 660, "Join Turbo"),
+  mk(17, "Changan", "Oshan X7", 2022, 8300000, 19000, "Petrol", "Automatic", "Lahore", "SUV", IMG.suv, 1500, "FutureSense"),
+  mk(18, "MG", "HS", 2021, 6400000, 28000, "Petrol", "Automatic", "Lahore", "Compact SUV", IMG.suv, 1500, "Exclusive"),
+  mk(19, "Honda", "Freed", 2019, 4600000, 51000, "Hybrid", "Automatic", "Lahore", "Mini Van", IMG.sedan, 1500, "G Aero"),
+  mk(20, "Audi", "A6", 2018, 16500000, 35000, "Petrol", "Automatic", "Lahore", "Luxury", IMG.luxury, 1800, "TFSI"),
+  mk(21, "Isuzu", "D-Max", 2020, 7800000, 42000, "Diesel", "Manual", "Lahore", "Double Cabin", IMG.suv, 3000, "V-Cross"),
 ];
 
 export const newCars = [
@@ -82,6 +91,42 @@ export const parts = [
   { id: "4", title: "Premium All-Weather 7D Car Floor Mats", category: "Accessories", price: 9500, currency: "PKR", image: IMG.luxury, description: "Custom fit waterproof leather floor mats tailored for sedans and SUVs." },
 ];
 
-export const makes = ["Toyota", "Honda", "Suzuki", "Mercedes-Benz", "Ferrari", "Hyundai", "Kia"];
+export const makes = ["Toyota", "Honda", "Suzuki", "Mercedes-Benz", "Ferrari", "Hyundai", "Kia", "MG", "Changan", "Audi", "Isuzu", "Mazda"];
 export const cities = ["Lahore", "Karachi", "Islamabad", "Rawalpindi", "Faisalabad"];
-export const categories = ["Sedan", "Hatchback", "SUV", "Luxury", "Coupe", "Hybrid", "Automatic", "Manual", "Diesel", "Petrol"];
+export const bodyTypes = [
+  "Sedan",
+  "Hatchback",
+  "SUV",
+  "Crossover",
+  "Compact SUV",
+  "Coupe",
+  "Convertible",
+  "MPV",
+  "Mini Van",
+  "Pickup",
+  "Double Cabin",
+  "Van",
+  "Station Wagon",
+  "Luxury",
+];
+export const categories = [
+  "Sedan",
+  "Hatchback",
+  "SUV",
+  "Crossover",
+  "Compact SUV",
+  "Coupe",
+  "Convertible",
+  "MPV",
+  "Mini Van",
+  "Pickup",
+  "Double Cabin",
+  "Van",
+  "Station Wagon",
+  "Luxury",
+  "Hybrid",
+  "Automatic",
+  "Manual",
+  "Diesel",
+  "Petrol",
+];
