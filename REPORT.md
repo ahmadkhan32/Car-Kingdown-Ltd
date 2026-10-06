@@ -227,7 +227,7 @@ The crawler execution against live PakWheels Lahore Used Cars produced the follo
   - Missing Description: 3
   - Missing Engine CC: 3
   - Missing Mileage: 3
-- **Outputs Stored:** `output/pakwheels.csv`, `output/pakwheels.json`, `output/failed-urls.json`, `output/summary.json`.
+- **Outputs Stored:** `output/cars.csv`, `output/cars.json`, `output/failed_urls.json`, `output/summary.json`.
 
 ---
 

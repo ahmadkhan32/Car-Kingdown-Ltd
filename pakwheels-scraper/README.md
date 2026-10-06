@@ -8,9 +8,9 @@ A responsible Node.js crawler and parser designed to analyze publicly accessible
 - **Robust Pipeline**: Axios + Cheerio with fallback JSON-LD parsing.
 - **Normalization & Deduplication**: Standardizes currency/prices, mileage, years, and eliminates duplicate listings via `listing_id` and canonical URL hashing.
 - **Comprehensive Output**:
-  - `output/pakwheels.csv`
-  - `output/pakwheels.json`
-  - `output/failed-urls.json`
+  - `output/cars.csv`
+  - `output/cars.json`
+  - `output/failed_urls.json`
   - `output/summary.json`
 
 ## Installation & Running

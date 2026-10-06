@@ -57,9 +57,9 @@ npm run dev
 - **Stack:** Node.js, Axios, Cheerio, robots-parser, csv-writer.
 - **Seed:** `https://www.pakwheels.com/used-cars/lahore/24858`
 - **Output:**
-  - `output/pakwheels.csv`
-  - `output/pakwheels.json`
-  - `output/failed-urls.json`
+  - `output/cars.csv`
+  - `output/cars.json`
+  - `output/failed_urls.json`
   - `output/summary.json`
 
 ### Running the Scraper

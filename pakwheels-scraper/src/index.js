@@ -31,7 +31,7 @@ async function main() {
   });
 
   // 1. Write CSV with exact university schema
-  const csvPath = path.join(OUTPUT_DIR, "pakwheels.csv");
+  const csvPath = path.join(OUTPUT_DIR, "cars.csv");
   const csvHeaders = [
     { id: "record_id", title: "record_id" },
     { id: "record_type", title: "record_type" },
@@ -90,11 +90,11 @@ async function main() {
   await csvWriter.writeRecords(formattedForCsv);
 
   // 2. Write JSON
-  const jsonPath = path.join(OUTPUT_DIR, "pakwheels.json");
+  const jsonPath = path.join(OUTPUT_DIR, "cars.json");
   fs.writeFileSync(jsonPath, JSON.stringify(records, null, 2), "utf8");
 
   // 3. Write Failed URLs
-  const failedPath = path.join(OUTPUT_DIR, "failed-urls.json");
+  const failedPath = path.join(OUTPUT_DIR, "failed_urls.json");
   fs.writeFileSync(failedPath, JSON.stringify(failedUrls, null, 2), "utf8");
 
   // 4. Write Summary JSON
@@ -116,9 +116,9 @@ async function main() {
   console.log(`Missing description:  ${summary.missing_fields.description}`);
   console.log(`Missing city:         ${summary.missing_fields.city}`);
   console.log(`Missing image:        ${summary.missing_fields.image}`);
-  console.log(`CSV saved:            output/pakwheels.csv`);
-  console.log(`JSON saved:           output/pakwheels.json`);
-  console.log(`Failed URLs:          output/failed-urls.json`);
+  console.log(`CSV saved:            output/cars.csv`);
+  console.log(`JSON saved:           output/cars.json`);
+  console.log(`Failed URLs:          output/failed_urls.json`);
   console.log(`Summary saved:        output/summary.json`);
   console.log("========================================\n");
 }
